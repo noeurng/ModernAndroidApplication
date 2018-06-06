@@ -2,7 +2,7 @@
 Best practices from Android development world<br>
 * Language: Kotlin
 * Architecture: Clean Architecture
-* Android: SupportLibrary, CardView, Recycler, ConstraintLayout, ArchitectureComponents
+* Android: SupportLibrary, CardView, RecyclerView, ConstraintLayout, ArchitectureComponents
 * Async: Coroutines
 * Network: OkHttp, Retrofit
 * Database: Room
