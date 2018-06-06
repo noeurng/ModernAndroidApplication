@@ -8,7 +8,6 @@ import com.ne1c.modernapp.R
 import com.ne1c.modernapp.presentation.main.MainActivity
 
 class SplashActivity : AppCompatActivity() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)

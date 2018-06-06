@@ -3,15 +3,15 @@ package com.ne1c.modernapp.data.network.model
 import com.google.gson.annotations.SerializedName
 
 class RepositoryModel {
-    var id: Int = 0
-    var name: String = ""
-    var desciption: String = ""
-    var language: String = ""
-    var owner: RepositoryModel? = null
+    var id = 0L
+    var name = ""
+    var description = ""
+    var language = ""
+    var owner: OwnerRepositoryModel? = null
 
     @SerializedName("stargazers_count")
-    var start = 0
+    var stars = 0
 
-    @SerializedName("watchers_count")
-    var watchers = 0
+    @SerializedName("forks_count")
+    var forks = 0
 }

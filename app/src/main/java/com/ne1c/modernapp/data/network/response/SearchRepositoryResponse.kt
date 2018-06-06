@@ -5,7 +5,7 @@ import com.ne1c.modernapp.data.network.model.RepositoryModel
 
 class SearchRepositoryResponse {
     @SerializedName("total_count")
-    var count = 0
+    var count = 0L
 
     @SerializedName("incomplete_results")
     var incompleteResults = false

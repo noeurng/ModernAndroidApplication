@@ -17,18 +17,24 @@
 
         <TextView
             android:id="@+id/nameTextView"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
             android:fontFamily="@font/google_sans_regular"
             android:textSize="20sp"
-            tools:text="Repository name"/>
+            app:layout_constraintEnd_toStartOf="@+id/userNameTextView"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Repository"/>
 
         <TextView
             android:id="@+id/descTextView"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:fontFamily="@font/google_sans_regular"
+            app:layout_constraintEnd_toEndOf="@+id/nameTextView"
             app:layout_constraintStart_toStartOf="@+id/nameTextView"
             app:layout_constraintTop_toBottomOf="@id/nameTextView"
             tools:text="Description"/>
@@ -51,16 +57,15 @@
             android:layout_marginTop="4dp"
             android:fontFamily="@font/google_sans_regular"
             android:text="John Smith"
+            android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1"
-            app:layout_constraintStart_toEndOf="@+id/nameTextView"
             app:layout_constraintTop_toTopOf="parent"/>
 
         <TextView
             android:id="@+id/langTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="16dp"
             android:background="@drawable/language_frame_bg"
             android:fontFamily="@font/google_sans_regular"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -73,6 +78,7 @@
             android:id="@+id/startsTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="16dp"
@@ -93,6 +99,7 @@
             android:id="@+id/forksTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
             android:drawablePadding="8dp"
             android:drawableStart="@drawable/ic_fork_16dp"
