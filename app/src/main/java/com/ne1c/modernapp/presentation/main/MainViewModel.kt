@@ -9,14 +9,14 @@ import kotlinx.coroutines.experimental.launch
 
 class MainViewModel(private val repoInteractor: RepoInteractor) : ViewModel() {
     val topRepositories = MutableLiveData<ArrayList<RepositoryModel>>()
-    val loadingStatus = MutableLiveData<Boolean>()
+    val loadingState = MutableLiveData<Boolean>()
 
     fun start() {
-        loadingStatus.value = true
+        loadingState.value = true
 
         launch(UI) {
             topRepositories.value = repoInteractor.getTopRepositories()
-            loadingStatus.value = false
+            loadingState.value = false
         }
     }
 

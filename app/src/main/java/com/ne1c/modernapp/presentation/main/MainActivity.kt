@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
             (reposRecyclerView.adapter as RepositoriesAdapter).setData(it!!)
         })
 
-        viewModel.loadingStatus.observe(this, Observer {
+        viewModel.loadingState.observe(this, Observer {
             progressBar.visibility = if (checkNotNull(it)) {
                 View.VISIBLE
             } else {
