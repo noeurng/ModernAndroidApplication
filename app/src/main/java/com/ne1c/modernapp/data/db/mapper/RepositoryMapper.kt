@@ -27,7 +27,7 @@ fun map(remote: RepositoryModel): LocalRepositoryModel {
                 id = remote.id
                 name = remote.name
                 description = remote.description
-                language = remote.language
+                language = remote.language ?: ""
                 stars = remote.stars
                 forks = remote.forks
                 ownerId = remote.owner!!.id

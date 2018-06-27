@@ -5,6 +5,7 @@ import com.ne1c.modernapp.data.db.source.DatabaseSource
 import com.ne1c.modernapp.data.network.model.RepositoryModel
 import com.ne1c.modernapp.data.network.source.NetworkDataSource
 import com.ne1c.modernapp.domain.NetworkState
+import kotlinx.coroutines.experimental.async
 
 class RepoRepositoryImpl(private val networkDataSource: NetworkDataSource,
                          private val databaseSource: DatabaseSource,
@@ -14,11 +15,16 @@ class RepoRepositoryImpl(private val networkDataSource: NetworkDataSource,
             val remoteData = networkDataSource.getTopRepositories()
             val localData = remoteData.map { map(it) }
 
-            databaseSource.repositoryDao().insertAll(*localData.toTypedArray())
+            async {
+                databaseSource.repositoryDao().insertAll(*localData.toTypedArray())
+            }.await()
 
-            return remoteData
+            remoteData
         } else {
-            val localData = databaseSource.repositoryDao().getAll()
+            val localData = async {
+                databaseSource.repositoryDao().getAll()
+            }.await()
+
             localData.map { map(it) } as ArrayList<RepositoryModel>
         }
     }

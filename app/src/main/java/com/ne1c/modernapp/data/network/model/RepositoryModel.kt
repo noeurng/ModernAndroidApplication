@@ -6,7 +6,7 @@ class RepositoryModel {
     var id = 0L
     var name = ""
     var description = ""
-    var language = ""
+    var language: String? = ""
     var owner: OwnerRepositoryModel? = null
 
     @SerializedName("stargazers_count")
